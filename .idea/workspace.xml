@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca5d1176-9fbb-416f-9cb6-19d3227fcc88" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/resources/RiderDB.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/RiderServiceDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/RiderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/RiderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/entity/Rider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/entity/Rider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/RideTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/RideTest.java" afterDir="false" />
@@ -38,7 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "UC2",
+    "git-widget-placeholder": "UC3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

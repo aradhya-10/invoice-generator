@@ -1,30 +1,23 @@
 package org.example.service;
-
 import org.example.service.entity.Rider;
-
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 public class RiderService {
-    /*
-    @desc: calculate fare with  max of (Rs 5, Rs 10 per km plus total time spent)
-    @oarams: distance as double, time as double
-    @return: fare price as double
-     */
-    public static double  calculateFare(double distance, double time) {
-        double fare= 10.0*distance+time;
-        fare= Math.max(fare,5.0);
-        return fare;
+    public RiderService(){};
+    public enum IOService{CONSOLE_IO,FILE_IO,DB_IO,REST_IO};
+    private List<Rider> riderList;
+    RiderServiceDB riderServiceDB= new RiderServiceDB();
+    // read data of the rideRepository table
+    public List<Rider> readRidersList(IOService ioService) {
+        if(ioService.equals(IOService.DB_IO))
+            this.riderList= riderServiceDB.readData();
+        return riderList;
     }
-    /*
-    @desc: calculate total fare of the list containing various Rider object
-     @params: List containing Rider object
-     @return: total fare
-     */
-    public static double calculateFareMultipleRides(List<Rider> riders) {
-        double fare = 0;
-        for (Rider rider : riders) {
-            fare +=  Math.max(5.0,10.0 * rider.distance + rider.time);
-        }
-        return fare;
+    // read Invoice generated of all the rides
+    public Map<String, Object> retriveRidersInvoice() throws Exception {
+        Map<String,Object> riderMap= new HashMap<>();
+        riderMap= riderServiceDB.retrieveRidersDBInvoice();
+        return riderMap;
     }
 }
