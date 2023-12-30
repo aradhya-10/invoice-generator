@@ -12,24 +12,24 @@ import java.util.Map;
 import static org.example.service.RiderService.IOService.DB_IO;
 
 class RideTest {
-    // UC1 and UC 2
+    // UC1 and UC2
     @Test
     public void givenTable_WhenRetrieved_shouldMatchProper(){
         RiderService riderService= new RiderService();
         List<Rider> riderList= riderService.readRidersList(DB_IO);
         Assertions.assertEquals(7,riderList.size());
     }
-    //UC3
+    //UC3 UC5
     @Test
     public void givenInvoice_WhenRetrieved_ShouldMatchProper() throws Exception {
         RiderService riderService= new RiderService();
         Map<String,Object> riderMap= new HashMap<>();
         riderMap= riderService.retriveRidersInvoice();
         Assertions.assertEquals(7,riderMap.get("TotalRideNo"));
-        Assertions.assertEquals(34.714285714285715,riderMap.get("AvgFare"));
-        Assertions.assertEquals(243.0,riderMap.get("TotalFare"));
+        Assertions.assertEquals(49.214285714285715,riderMap.get("AvgFare"));
+        Assertions.assertEquals(344.5,riderMap.get("TotalFare"));
     }
-    //UC4
+    //UC4  UC5
     @Test
     public void givenUserIDretrieveInvoice_ShouldMatchProper() throws  Exception{
         RiderService riderService= new RiderService();
@@ -38,8 +38,7 @@ class RideTest {
         Assertions.assertEquals(3,riderMapList.size());
         // checking all the initials of userID 1
         Assertions.assertEquals(3,riderMapList.get(0).get("TotalRideNo"));
-        Assertions.assertEquals(35.666666666666664,riderMapList.get(0).get("AvgFare"));
-        Assertions.assertEquals(107.0,riderMapList.get(0).get("TotalFare"));
+        Assertions.assertEquals(48.833333333333336,riderMapList.get(0).get("AvgFare"));
+        Assertions.assertEquals(146.5,riderMapList.get(0).get("TotalFare"));
     }
-
 }
