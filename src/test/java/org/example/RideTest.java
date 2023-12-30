@@ -1,9 +1,12 @@
 package org.example;
-
 import org.example.service.RiderService;
 import org.example.service.entity.Rider;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 class RideTest {
     // UC1
     @Test
@@ -17,6 +20,16 @@ class RideTest {
         Assertions.assertEquals(5.0, RiderService.calculateFare(rider.distance,rider.time));
 
     }
+    //UC2
+    @Test
+    public void multipleRides(){
+        List<Rider> riders= new ArrayList<>();
+        riders.add(new Rider(1,5.0,5.0));
+        riders.add(new Rider(2,10.0,5.0));
+        riders.add(new Rider(3,0.1,1.0));
+        Assertions.assertEquals(165.0,RiderService.calculateFareMultipleRides(riders));
+    }
+
 
 
 }
